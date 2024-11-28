@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="cupcake">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Poppins -Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;0,600;0,700;0,800;0,900;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <!-- Font Style -->
+    <style>
+        .poppins-thin {
+            font-family: "Poppins", sans-serif;
+            font-weight: 100;
+            font-style: normal;
+        }
+
+        .poppins-regular {
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .poppins-medium {
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+        }
+
+        .poppins-semibold {
+            font-family: "Poppins", sans-serif;
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        .poppins-bold {
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        .poppins-extrabold {
+            font-family: "Poppins", sans-serif;
+            font-weight: 800;
+            font-style: normal;
+        }
+
+        .poppins-black {
+            font-family: "Poppins", sans-serif;
+            font-weight: 900;
+            font-style: normal;
+        }
+
+        .poppins-semibold-italic {
+            font-family: "Poppins", sans-serif;
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        .poppins-bold-italic {
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <header
+        class="flex justify-between items-center w-auto mx-4 mt-5 p-5 lg:mx-10 bg-purple-300 bg-opacity-50 rounded-xl">
+        <div>
+            <h1 class="text-3xl poppins-black text-blue-950">Interactive</h1>
+            <p class="text-xl poppins-regular">Geometry Genius</p>
+        </div>
+        <button class="btn btn-neutral">Blog</button>
+    </header>
+    <main class="w-auto mx-4 p-5 lg:mx-6">
+        <div class="grid grid-cols-4 justify-center gap-6">
+            <!-- card-1 -->
+            <div class="space-y-2 py-5 border-2 text-center rounded-xl">
+                <div class="pb-3 flex justify-center items-center">
+                    <img class="h-24 w-44" src="images/triangle.png" alt="">
+                </div>
+                <p class="poppins-medium">Triangle</p>
+                <p>Area (A) = 0.5 <span class="text-xs">X</span> b <span class="text-xs">X</span> h</p>
+                <div class="flex justify-center items-center">
+                    <input type="search" name="" id="triangle-base" placeholder="b" class="w-16 px-2 bg-gray-200 rounded-sm">
+                    <p>&nbsp; cm</p> &nbsp; &nbsp;
+                    <input type="search" name="" id="triangle-height" placeholder="h" class="w-16 px-2 bg-gray-200 rounded-sm">
+                    <p>&nbsp; cm</p>
+                </div>
+                <div class="pt-4">
+                    <button onclick="CalculateTriangleArea()" class="bg-lime-700 text-white px-5 py-2 rounded-lg">Calculate</button>
+                </div>
+            </div>
+            <!-- card-2 -->
+            <div class="space-y-2 py-5 border-2 text-center rounded-xl">
+                <div class="pb-3 flex justify-center items-center">
+                    <img class="h-24 w-44" src="images/rectangle.png" alt="">
+                </div>
+                <p class="poppins-medium">Rectangle</p>
+                <p>Area (A) = w <span class="text-xs">X</span> l</p>
+                <div class="flex justify-center items-center">
+                    <input type="search" name="" id="rectangle-width" placeholder="w" class="w-16 px-2 bg-gray-200 rounded-sm">
+                    <p>&nbsp; cm</p> &nbsp; &nbsp;
+                    <input type="search" name="" id="rectangle-length" placeholder="l" class="w-16 px-2 bg-gray-200 rounded-sm">
+                    <p>&nbsp; cm</p>
+                </div>
+                <div class="pt-4">
+                    <button onclick="CalculateRectangleArea()" class="bg-lime-700 text-white px-5 py-2 rounded-lg">Calculate</button>
+                </div>
+            </div>
+            <!-- card-3 -->
+            <div class="space-y-2 py-5 border-2 text-center rounded-xl">
+                <div class="pb-3 flex justify-center items-center">
+                    <img class="h-24 w-44" src="images/parallelogram.png" alt="">
+                </div>
+                <p class="poppins-medium">Parallelogram</p>
+                <p>Area (A) = b <span class="text-xs">X</span> h</p>
+                <div class="flex justify-center items-center">
+                    <input type="search" name="" id="parallelogram-base" placeholder="b" class="w-16 px-2 bg-gray-200 rounded-sm">
+                    <p>&nbsp; cm</p> &nbsp; &nbsp;
+                    <input type="search" name="" id="parallelogram-height" placeholder="h" class="w-16 px-2 bg-gray-200 rounded-sm">
+                    <p>&nbsp; cm</p>
+                </div>
+                <div class="pt-4">
+                    <button onclick="calculateParallelogramArea()" class="bg-lime-700 text-white px-5 py-2 rounded-lg">Calculate</button>
+                </div>
+            </div>
+            <!-- card-7 -->
+            <div class="space-y-2 py-5 border-2 text-center rounded-xl row-span-2">
+                <p class="poppins-medium underline">Area Calculation</p>
+                <p id="total-area" class="text-2xl poppins-semibold pt-5 px-5 text-ellipsis"></p>
+            </div>
+            <!-- card-4 -->
+            <div class="space-y-2 py-5 border-2 text-center rounded-xl">
+                <div class="pb-3 flex justify-center items-center">
+                    <img class="h-24 w-32" src="images/rhombus.png" alt="">
+                </div>
+                <p class="poppins-medium">Rhombus</p>
+                <p>Area (A) = 0.5 <span class="text-xs">X</span> d<sub>1</sub> <span class="text-xs">X</span> d<sub>2</sub></p>
+                <div class="flex justify-center items-center">
+                    <input type="search" name="" id="rhombus-D1" placeholder="d1" class="w-16 px-2 bg-gray-200 rounded-sm">
+                    <p>&nbsp; cm</p> &nbsp; &nbsp;
+                    <input type="search" name="" id="rhombus-D2" placeholder="d2" class="w-16 px-2 bg-gray-200 rounded-sm">
+                    <p>&nbsp; cm</p>
+                </div>
+                <div class="pt-4">
+                    <button onclick="CalculateRhombusArea()" class="bg-lime-700 text-white px-5 py-2 rounded-lg">Calculate</button>
+                </div>
+            </div>
+            <!-- card-5 -->
+            <div class="space-y-2 py-5 border-2 text-center rounded-xl">
+                <div class="pb-3 flex justify-center items-center">
+                    <img class="h-24 w-32" src="images/pentagon.png" alt="">
+                </div>
+                <p class="poppins-medium">Pentagon</p>
+                <p>Area (A) = 0.5 <span class="text-xs">X</span> p <span class="text-xs">X</span> b</p>
+                <div class="flex justify-center items-center">
+                    <input type="search" name="" id="pentagon-p" placeholder="p" class="w-16 px-2 bg-gray-200 rounded-sm">
+                    <p>&nbsp; cm</p> &nbsp; &nbsp;
+                    <input type="search" name="" id="pentagon-b" placeholder="b" class="w-16 px-2 bg-gray-200 rounded-sm">
+                    <p>&nbsp; cm</p>
+                </div>
+                <div class="pt-4">
+                    <button onclick="CalculatePentagonArea()" class="bg-lime-700 text-white px-5 py-2 rounded-lg">Calculate</button>
+                </div>
+            </div>
+            <!-- card-6 -->
+            <div class="space-y-2 py-5 border-2 text-center rounded-xl">
+                <div class="pb-3 flex justify-center items-center">
+                    <img class="h-24 w-36" src="images/ellipse.png" alt="">
+                </div>
+                <p class="poppins-medium">Ellipse</p>
+                <p>Area (A) = <span class="text-xs">&pi;</span> a <span class="text-xs">X</span> b</p>
+                <div class="flex justify-center items-center">
+                    <input type="search" name="" id="ellipse-A" placeholder="a" class="w-16 px-2 bg-gray-200 rounded-sm">
+                    <p>&nbsp; cm</p> &nbsp; &nbsp;
+                    <input type="search" name="" id="ellipse-B" placeholder="b" class="w-16 px-2 bg-gray-200 rounded-sm">
+                    <p>&nbsp; cm</p>
+                </div>
+                <div class="pt-4">
+                    <button onclick="CalculateEllipseArea()" class="bg-lime-700 text-white px-5 py-2 rounded-lg">Calculate</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="js/triangle.js"></script>
+    <script src="js/rectangle.js"></script>
+    <script src="js/parallelogram.js"></script>
+    <script src="js/rhombus.js"></script>
+    <script src="js/pentagon.js"></script>
+    <script src="js/ellipse.js"></script>
+    <script src="js/areaTotal.js"></script>
+
+</body>
+
+</html>
